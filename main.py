@@ -7,6 +7,9 @@ import os
 from dotenv import load_dotenv
 from plyer import notification
 
+if not os.path.exists(".env"):
+    open(".env", 'w').close()
+
 # Load environment variables
 load_dotenv(dotenv_path=".env")
 
