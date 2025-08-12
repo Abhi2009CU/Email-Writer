@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Email-Writer (Settings)</title>
+    <style>
+        body {
+            filter: invert(1);
+            background: black;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .note {
+            font-size: 14px;
+            font-weight: normal;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .required {
+            color: cyan;
+        }
+
+        input {
+            width: 20%;
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0f6cd1;
+        }
+    </style>
+</head>
+<body>
+    <form action="/settings" method="POST">
+
+        <div>
+            <h1>Please Enter Your 'Together.ai' API key</h1>
+            <div class="note required">Required</div>
+            <input type="text" id="api_key" name="api_key" placeholder="Your API key here..." required>
+        </div>
+
+        <div>
+            <h1>Please Enter Your AI Model of Choice</h1>
+            <div class="note">Optional</div>
+            <input type="text" id="model" name="model" placeholder="e.g., mistral-7b-instruct">
+        </div>
+
+        <div>
+            <h1>Please Enter Your Local Port of Choice</h1>
+            <div class="note">Optional</div>
+            <input type="text" id="port" name="port" placeholder="Default Port 5000">
+        </div>
+
+        <button type="submit">Generate</button>
+    </form>
+    <div>
+        <h1>{{error}}</h1>
+
+</body>
+</html>
