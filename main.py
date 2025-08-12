@@ -77,10 +77,8 @@ def write():
     #Prepare prompt based on choice
     if choice == "1":
         prompt = f"Generate a reply based on this email content:\n{content}"
-    elif choice == "2":
-        prompt = f"Generate a new email based on this prompt:\n{content}"
     else:
-        prompt = f"Other task with content:\n{content}"
+        prompt = f"Generate a new email based on this prompt:\n{content}"
 
     #Contact ai and receive response
     response = client.chat.completions.create(
